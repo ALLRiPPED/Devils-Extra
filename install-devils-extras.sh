@@ -11,4 +11,6 @@ if [ ! -d "$RPS_HOME" ];then
 fi
 
 echo "Cloning Devils-Extra into $RPS_HOME"
-git clone 
+git clone https://github.com/ALLRiPPED/Devils-Extra.git
+echo "Running RetroPie-Setup"
+sudo ~/RetroPie-Setup/retropie_setup.sh
