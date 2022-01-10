@@ -13,7 +13,7 @@ Pull requests and issue reports are accepted and encouraged as well as requests.
 The following commands clones the repo to your Raspberry Pi directly to the `RetroPie-Setup/ext` folder and runs `RetroPie-Setup/retropie_setup.sh`.
 
 ```bash
-curl -sSL https://git.io/J9ZCn | bash
+curl -sSL https://git.io/J9Z8c | bash
 ```
 The installation script assumes that you are running it on a Raspberry Pi with the `RetroPie-Setup/` folder being stored in `/home/pi/RetroPie-Setup`. If your setup differs, just copy the `Devils-Extra` folder directly to the `/home/pi/RetroPie-Setup/ext` folder.
 
