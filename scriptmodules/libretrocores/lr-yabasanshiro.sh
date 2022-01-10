@@ -13,7 +13,7 @@ rp_module_id="lr-yabasanshiro"
 rp_module_desc="Saturn & ST-V emulator - Yabasanshiro port for libretro"
 rp_module_help="ROM Extensions: .iso .cue .zip .ccd .mds\n\nCopy your Sega Saturn & ST-V roms to $romdir/saturn\n\nCopy the required BIOS file saturn_bios.bin / stvbios.zip to $biosdir/yabasanshiro"
 rp_module_licence="GPL2 https://raw.githubusercontent.com/libretro/yabause/yabasanshiro/LICENSE"
-rp_module_repo="git https://github.com/libretro/yabause.git yabasanshiro 73c67668"
+rp_module_repo="git https://github.com/libretro/yabause.git yabasanshiro"
 rp_module_section="exp"
 rp_module_flags="!all rpi4"
 
