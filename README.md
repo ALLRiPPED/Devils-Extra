@@ -32,7 +32,7 @@ The following commands updates your Raspberry Pi to the latest repo directly to 
 
 ```bash
 cd ~
-cd RetroPie-Setup/Devils-Extra/
+cd RetroPie-Setup/ext/Devils-Extra/
 git pull origin
 ```
 
