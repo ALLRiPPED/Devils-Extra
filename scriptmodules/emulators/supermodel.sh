@@ -89,8 +89,8 @@ function configure_supermodel() {
     chown -R $user:$user "$md_conf_root/model3/Config"
     chown -R $user:$user "$home/.model3"
 
-    addEmulator 0 "$md_id-legacy3d" "model3" "XINIT:$md_inst/supermodel.sh -game-xml-file=/opt/retropie/configs/model3/Config/Games.xml -legacy3d -sound-volume=50 -music-volume=60 -no-vsync -no-throttle -no-dsb -res=496,384 -quad-rendering %ROM%"
-    addEmulator 0 "$md_id-new3d" "model3" "XINIT:$md_inst/supermodel.sh -game-xml-file=/opt/retropie/configs/model3/Config/Games.xml -sound-volume=50 -music-volume=60 -no-vsync -no-throttle -no-dsb -res=496,384 -quad-rendering %ROM%"
+    addEmulator 0 "$md_id-legacy3d" "model3" "XINIT:$md_inst/supermodel.sh -game-xml-file=/opt/retropie/configs/model3/Config/Games.xml -legacy3d -sound-volume=50 -music-volume=60 -no-vsync -no-throttle -no-dsb -res=$Xaxis,$Yaxis -quad-rendering %ROM%"
+    addEmulator 0 "$md_id-new3d" "model3" "XINIT:$md_inst/supermodel.sh -game-xml-file=/opt/retropie/configs/model3/Config/Games.xml -sound-volume=50 -music-volume=60 -no-vsync -no-throttle -no-dsb -res=$Xaxis,$Yaxis -quad-rendering %ROM%"
 
     addSystem "model3"
 
