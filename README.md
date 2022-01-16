@@ -35,5 +35,9 @@ cd ~
 cd RetroPie-Setup/ext/Devils-Extra/
 git pull origin
 ```
+```
+Or if installed with installer open terminal and type 
 
-The installation script assumes that you are running it on a Raspberry Pi with the `RetroPie-Setup/` folder being stored in `/home/pi/RetroPie-Setup`. If your setup differs, just copy the `Devils-Extra` folder directly to the `/home/pi/RetroPie-Setup/ext` folder.
+up-extras
+press enter
+```
