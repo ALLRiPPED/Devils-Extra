@@ -12,5 +12,6 @@ fi
 
 echo "Cloning Devils-Extra into $RPS_HOME"
 git clone https://github.com/Retro-Devils/Devils-Extra.git /home/pi/RetroPie-Setup/ext/Devils-Extra
+sudo cp /home/pi/RetroPie-Setup/ext/Devils-Extra/up-extras -f /usr/local/bin/
 echo "Running RetroPie-Setup"
 sudo ~/RetroPie-Setup/retropie_setup.sh
