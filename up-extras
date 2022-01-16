@@ -1,0 +1,5 @@
+#!/bin/bash
+cd ~ 
+cd RetroPie-Setup/ext/Devils-Extra/
+git pull origin
+
