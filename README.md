@@ -48,5 +48,4 @@ git pull origin
 
 up-extras
 
-press enter
 
