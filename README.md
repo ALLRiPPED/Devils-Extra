@@ -23,12 +23,13 @@ The installation script assumes that you are running it on a Raspberry Pi with t
 
 ## Usage
 
-After installing **Devils-Extra**, the extra scripts will be installed directly in the **RetroPie Setup script** (generally in the experimental section), which you can run from either the menu in retropie or 
-
+After installing **Devils-Extra**, the extra scripts will be installed directly in the **RetroPie Setup script** (generally in the experimental section), which you can run from either the menu in retropie or
 command line with :
 
 cd ~
+
 cd RetroPie-Setup/
+
 sudo ./retropie_setup.sh
 
 
@@ -37,12 +38,15 @@ sudo ./retropie_setup.sh
 The following commands updates your Raspberry Pi to the latest repo directly to the `RetroPie-Setup/ext` folder.
 
 cd ~
+
 cd RetroPie-Setup/ext/Devils-Extra/
+
 git pull origin
 
 
-Or if installed with installer open terminal and type 
+**Or if installed with installer open terminal and type**
 
 up-extras
+
 press enter
 
