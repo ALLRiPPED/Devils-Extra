@@ -17,4 +17,3 @@ else
     git clone https://github.com/Retro-Devils/Devils-Extra.git "$RPS_HOME/ext/Devils-Extra"
     sleep 1
 fi
-cp -f "$RPS_HOME/ext/Devils-Extra/platforms.cfg" "/opt/retropie/configs/all/platforms.cfg"
