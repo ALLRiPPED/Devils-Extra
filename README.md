@@ -44,7 +44,7 @@ cd RetroPie-Setup/ext/Devils-Extra/
 git pull origin
 
 
-**Or if installed with installer open terminal and type**
+**Or if you used installer open terminal and type**
 
 up-extras
 
