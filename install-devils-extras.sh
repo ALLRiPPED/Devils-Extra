@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RPS_HOME='/home/pi/RetroPie-Setup/ext'
+RPS_HOME='/home/pi/RetroPie-Setup'
 if [ ! -z "$1" ];then
     RPS_HOME="$1"
 fi
@@ -9,11 +9,12 @@ if [ ! -d "$RPS_HOME" ];then
     echo "EX: ./install-extras.sh /home/pi/RetroPie-Setup/ext"
     exit
 fi
-
-echo "Cloning Devils-Extra into $RPS_HOME"
-git clone https://github.com/Retro-Devils/Devils-Extra.git /home/pi/RetroPie-Setup/ext/Devils-Extra
-sudo cp /home/pi/RetroPie-Setup/ext/Devils-Extra/up-extras -f /usr/local/bin/
-sudo chmod 755 /usr/local/bin/up-extras
-sleep 1
-echo "Running RetroPie-Setup"
-sudo ~/RetroPie-Setup/retropie_setup.sh
+if [ -d  "$RPS_HOME/ext/Devils-Extra" ]; then
+    cd "$RPS_HOME/ext/Devils-Extra"
+    git pull origin --force
+else
+    echo "Cloning Devils-Extra into $RPS_HOME"
+    git clone https://github.com/Retro-Devils/Devils-Extra.git "$RPS_HOME/ext/Devils-Extra"
+    sleep 1
+fi
+cp -f "$RPS_HOME/ext/Devils-Extra/platforms.cfg" "/opt/retropie/configs/all/platforms.cfg"

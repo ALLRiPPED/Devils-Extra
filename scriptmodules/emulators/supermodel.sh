@@ -28,25 +28,6 @@ function sources_supermodel() {
 }
 
 function build_supermodel() {
-    #Controller configuration
-    sed -i 's|InputStart1 = "KEY_1,JOY1_BUTTON9"|InputStart1 = "KEY_1,JOY1_BUTTON10"|g' ./Config/Supermodel.ini
-    sed -i 's|InputStart2 = "KEY_2,JOY2_BUTTON9"|InputStart2 = "KEY_2,JOY2_BUTTON10"|g' ./Config/Supermodel.ini
-    sed -i 's|InputCoin1 = "KEY_3,JOY1_BUTTON10"|InputCoin1 = "KEY_3,JOY1_BUTTON9"|g' ./Config/Supermodel.ini
-    sed -i 's|InputCoin2 = "KEY_4,JOY2_BUTTON10"|InputCoin2 = "KEY_4,JOY2_BUTTON9"|g' ./Config/Supermodel.ini
-    sed -i 's|InputAccelerator = "KEY_UP,JOY1_UP"|InputAccelerator = "KEY_UP,JOY1_RYAXIS_NEG"|g' ./Config/Supermodel.ini
-    sed -i 's|InputBrake = "KEY_DOWN,JOY1_DOWN"|InputBrake = "KEY_DOWN,JOY1_RYAXIS_POS"|g' ./Config/Supermodel.ini
-    sed -i 's|InputGearShiftUp = "KEY_Y"|InputGearShiftUp = "KEY_Y,JOY1_BUTTON6,JOY1_RZAXIS_POS"|g' ./Config/Supermodel.ini
-    sed -i 's|InputGearShiftDown = "KEY_H"|InputGearShiftDown = "KEY_H,JOY1_BUTTON5,JOY1_ZAXIS_POS"|g' ./Config/Supermodel.ini
-    sed -i 's|InputGearShift1 = "KEY_Q,JOY1_BUTTON5"|InputGearShift1 = "KEY_Q"|g' ./Config/Supermodel.ini
-    sed -i 's|InputGearShift2 = "KEY_W,JOY1_BUTTON6"|InputGearShift2 = "KEY_W"|g' ./Config/Supermodel.ini
-    sed -i 's|InputGearShift3 = "KEY_E,JOY1_BUTTON7"|InputGearShift3 = "KEY_E"|g' ./Config/Supermodel.ini
-    sed -i 's|InputGearShift4 = "KEY_R,JOY1_BUTTON8"|InputGearShift4 = "KEY_R"|g' ./Config/Supermodel.ini
-    sed -i 's|InputAnalogJoyX = "JOY_XAXIS,MOUSE_XAXIS"   ; analog, full X axis|InputAnalogJoyX = "JOY_XAXIS_INV,MOUSE_XAXIS_INV"   ; analog, full X axis|g' ./Config/Supermodel.ini
-    sed -i 's|InputAnalogJoyY = "JOY_YAXIS,MOUSE_YAXIS"   ; analog, full Y axis|InputAnalogJoyY = "JOY_YAXIS_INV,MOUSE_YAXIS_INV"   ; analog, full Y axis|g' ./Config/Supermodel.ini
-    sed -i 's|InputAnalogGunX2 = "NONE"|InputAnalogGunX2 = "JOY2_XAXIS"|g' ./Config/Supermodel.ini
-    sed -i 's|InputAnalogGunY2 = "NONE"|InputAnalogGunY2 = "JOY2_YAXIS"|g' ./Config/Supermodel.ini
-    sed -i 's|InputAnalogTriggerLeft2 = "NONE"|InputAnalogTriggerLeft2 = "JOY2_BUTTON1"|g' ./Config/Supermodel.ini
-    sed -i 's|InputAnalogTriggerRight2 = "NONE"|InputAnalogTriggerRight2 = "JOY2_BUTTON2"|g' ./Config/Supermodel.ini
    
     ln -s Makefiles/Makefile.UNIX Makefile
     make
@@ -74,23 +55,20 @@ function install_supermodel() {
 }
 
 function configure_supermodel() {
-    #Find out Screen Resolution
-    local Xaxis
-    local Yaxis
-    Xaxis=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f1)
-    Yaxis=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f2)
-
     mkRomDir "model3"
     
     moveConfigDir "$md_inst/bin/Config" "$md_conf_root/model3/Config"
     moveConfigDir "$md_inst/bin/NVRAM" "$home/.model3/NVRAM"
     moveConfigDir "$md_inst/bin/Saves" "$home/.model3/Saves"
+    cp -r "$scriptdir/ext/Devils-Extra/scriptmodules/emulators/supermodel/Supermodel.ini" "$md_conf_root/model3/Config"
 
     chown -R $user:$user "$md_conf_root/model3/Config"
     chown -R $user:$user "$home/.model3"
 
-    addEmulator 0 "$md_id-legacy3d" "model3" "XINIT:$md_inst/supermodel.sh -game-xml-file=/opt/retropie/configs/model3/Config/Games.xml -legacy3d -sound-volume=50 -music-volume=60 -no-vsync -no-throttle -no-dsb -res=$Xaxis,$Yaxis %ROM%"
-    addEmulator 0 "$md_id-new3d" "model3" "XINIT:$md_inst/supermodel.sh -game-xml-file=/opt/retropie/configs/model3/Config/Games.xml -sound-volume=50 -music-volume=60 -no-vsync -no-throttle -no-dsb -res=$Xaxis,$Yaxis %ROM%"
+    addEmulator 0 "$md_id-legacy3d-496x384 " "model3" "XINIT:$md_inst/supermodel.sh -game-xml-file=/opt/retropie/configs/model3/Config/Games.xml -legacy3d -sound-volume=50 -music-volume=60 -no-vsync -no-throttle -no-dsb %ROM%"
+    addEmulator 0 "$md_id-new3d-496x384" "model3" "XINIT:$md_inst/supermodel.sh -game-xml-file=/opt/retropie/configs/model3/Config/Games.xml -sound-volume=50 -music-volume=60 -no-vsync -no-throttle -no-dsb %ROM%"
+    addEmulator 0 "$md_id-legacy3d-640x480" "model3" "XINIT:$md_inst/supermodel.sh -game-xml-file=/opt/retropie/configs/model3/Config/Games.xml -legacy3d -sound-volume=50 -music-volume=60 -no-vsync -no-throttle -no-dsb -res=640,480 %ROM%"
+    addEmulator 0 "$md_id-new3d-640x480" "model3" "XINIT:$md_inst/supermodel.sh -game-xml-file=/opt/retropie/configs/model3/Config/Games.xml -sound-volume=50 -music-volume=60 -no-vsync -no-throttle -no-dsb -res=640,480 %ROM%"
 
     addSystem "model3"
 
