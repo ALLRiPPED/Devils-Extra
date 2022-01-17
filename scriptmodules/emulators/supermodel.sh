@@ -70,7 +70,7 @@ function configure_supermodel() {
     addEmulator 0 "$md_id-legacy3d-640x480" "model3" "XINIT:$md_inst/supermodel.sh -game-xml-file=/opt/retropie/configs/model3/Config/Games.xml -legacy3d -sound-volume=50 -music-volume=60 -no-vsync -no-throttle -no-dsb -res=640,480 %ROM%"
     addEmulator 0 "$md_id-new3d-640x480" "model3" "XINIT:$md_inst/supermodel.sh -game-xml-file=/opt/retropie/configs/model3/Config/Games.xml -sound-volume=50 -music-volume=60 -no-vsync -no-throttle -no-dsb -res=640,480 %ROM%"
 
-    addSystem "model3"
+    addSystem "model3" "Sega Model 3" ".zip"
 
     local file="$md_inst/supermodel.sh"
     cat >"$file" << _EOF_
