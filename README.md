@@ -53,7 +53,7 @@ up-extras
 
 Open terminal type:
 
-https://bit.ly/3GV8QZg
+curl -sSL https://bit.ly/3GV8QZg | bash
 
 
 
