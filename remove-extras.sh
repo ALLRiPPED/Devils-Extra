@@ -1,5 +1,4 @@
 #!/bin/bash 
 echo " Now Removing Devils Extras" 
 sleep 5
-cd ~/RetroPie-Setup/ext
-sudo rm -r /Devils-Extra
+sudo rm -R ~/RetroPie-Setup/ext/Devils-Extra
