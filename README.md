@@ -49,10 +49,11 @@ git pull origin
 up-extras
 
 
-## Uninstalling 
+## Removing
 
 Open terminal type:
 
+https://bit.ly/3GV8QZg
 
 
 
