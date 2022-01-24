@@ -49,3 +49,11 @@ git pull origin
 up-extras
 
 
+## Removing
+
+Open terminal type:
+
+curl -sSL https://bit.ly/3GV8QZg | bash
+
+
+
