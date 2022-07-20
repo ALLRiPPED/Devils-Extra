@@ -43,7 +43,7 @@ function build_supermodel3() {
 	mv Supermodel3.ini Supermodel3.ini.rp-dist
     fi
 
-    md_ret_require="$md_build/bin/supermodel3"
+    md_ret_require="$md_build/bin/supermodel"
 }
 
 function install_supermodel3() {
