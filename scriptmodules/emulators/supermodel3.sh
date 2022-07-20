@@ -34,7 +34,7 @@ function build_supermodel3() {
     cd bin
     cp -r "$scriptdir/ext/Devils-Extra/scriptmodules/emulators/supermodel3/NVRAM" "NVRAM"
     mkdir -p Config Saves
-    cp ../Config/Supermodel3.ini Config
+    cp ../Config/Supermodel.ini Config
     cp ../Config/Games.xml Config
     
     cd Config
@@ -60,7 +60,7 @@ function configure_supermodel3() {
     moveConfigDir "$md_inst/bin/Config" "$md_conf_root/model3/Config"
     moveConfigDir "$md_inst/bin/NVRAM" "$home/.model3/NVRAM"
     moveConfigDir "$md_inst/bin/Saves" "$home/.model3/Saves"
-    cp -r "$scriptdir/ext/Devils-Extra/scriptmodules/emulators/supermodel3/Supermodel3.ini" "$md_conf_root/model3/Config"
+    cp "$scriptdir/ext/Devils-Extra/scriptmodules/emulators/supermodel3/Supermodel3.ini" "$md_conf_root/model3/Config"
 
     chown -R $user:$user "$md_conf_root/model3/Config"
     chown -R $user:$user "$home/.model3"
