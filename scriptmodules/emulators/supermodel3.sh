@@ -76,7 +76,7 @@ function configure_supermodel3() {
     cat >"$file" << _EOF_
 #!/bin/bash
 pushd "$md_inst/bin"
-./$md_id "\$@"
+./supermodel "\$@"
 popd
 _EOF_
     chmod +x "$file"
